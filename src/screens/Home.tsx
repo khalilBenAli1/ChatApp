@@ -14,12 +14,15 @@ import {
   themeColor,
 } from "react-native-rapi-ui";
 import { Ionicons } from "@expo/vector-icons";
+import { useStores } from "../stores/useStores";
 
 export default function ({
   navigation,
 }: NativeStackScreenProps<MainStackParamList, "MainTabs">) {
+  const store =useStores()
   const { isDarkmode, setTheme } = useTheme();
   const auth = getAuth();
+  console.log(store,"mystore")
   return (
     <Layout>
       <TopNav

@@ -3,6 +3,7 @@ import Navigation from "./src/navigation";
 import { AuthProvider } from "./src/provider/AuthProvider";
 import { ThemeProvider } from "react-native-rapi-ui";
 import { LogBox } from "react-native";
+import { useInitialRootStore } from "./src/stores/useStores";
 
 export default function App() {
   const images = [
@@ -18,6 +19,8 @@ export default function App() {
     ]);
   }, []);
 
+  const { rehydrated } = useInitialRootStore(() => {
+  })
   return (
     <ThemeProvider theme="dark" images={images}>
       <AuthProvider>
