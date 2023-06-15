@@ -18,7 +18,7 @@ export default function ({
   return (
     <Layout>
       <TopNav
-        middleContent="Second Screen"
+        middleContent="Conversation Name"
         leftContent={
           <Ionicons
             name="chevron-back"
@@ -49,8 +49,7 @@ export default function ({
           justifyContent: "center",
         }}
       >
-        {/* This text using ubuntu font */}
-        <Text fontWeight="bold">This is the second screen</Text>
+        <Text fontWeight="bold">Conversation interface</Text>
       </View>
     </Layout>
   );
