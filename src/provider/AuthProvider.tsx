@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { app } from "../../config/firebase";
+import { FirebaseApp } from "firebase/app";
 
 type ContextProps = {
   user: null | boolean;
@@ -12,7 +14,8 @@ interface Props {
 }
 
 const AuthProvider = (props: Props) => {
-  const auth = getAuth();
+  const App:FirebaseApp=app
+  const auth = getAuth(app);
   // user null = loading
   const [user, setUser] = useState<null | boolean>(null);
 

@@ -18,6 +18,7 @@ import {
   useTheme,
   themeColor,
 } from "react-native-rapi-ui";
+import { createUser } from "../../utils/storage/Helpers";
 
 export default function ({
   navigation,
@@ -40,6 +41,7 @@ export default function ({
       setLoading(false);
       alert(errorMessage);
     });
+    await createUser(auth.currentUser)
   }
   return (
     <KeyboardAvoidingView behavior="height" enabled style={{ flex: 1 }}>
